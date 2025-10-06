@@ -1,0 +1,376 @@
+/* ================================================= */
+/* 1. ESTILOS GLOBALES Y BÁSICOS (ESTILO POP)       */
+/* ================================================= */
+/* Variables para colores y spacing - facilitan mantenimiento */
+:root {
+    --color-bg: #fce4ec;
+    --color-primary: #ff3366;
+    --color-primary-dark: #d1004a;
+    --color-accent: #cf9fc7;
+    --color-nav: #ca3888;
+    --text-dark: #333;
+    --radius-lg: 20px;
+}
+
+/* Global reset and sensible defaults */
+ *::before, *::after {
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+    /* AUMENTO: Párrafos más grandes y mejor espaciado de línea */
+    line-height: 1.7;
+    background-color: var(--color-bg);
+    font-size: 1.1rem;
+}
+
+/* TÍTULOS GRANDES Y CENTRADOS */
+h1,
+h2 {
+    color: var(--color-primary);
+    text-transform: uppercase;
+    text-align: center; /* ¡Centrado de los títulos! */
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 3.5rem; /* ¡Título principal grande! */
+}
+
+h2 {
+    font-size: 2.2rem; /* Títulos de sección más grandes */
+    margin-bottom: 30px;
+}
+
+section {
+    padding: 50px 20px;
+}
+
+
+
+/* INICIO: centrar contenido y hacer el video responsivo */
+#inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centra el contenido horizontalmente */
+    justify-content: center; /* centra verticalmente cuando sea necesario */
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 40px 20px;
+}
+
+#inicio p {
+    font-size: x-large;
+    max-width: 700px;
+    margin-bottom: 30px;
+}
+
+#inicio h3 {
+    font-size: xx-large;
+    margin: 30px 0 15px 0;
+}
+
+
+/* Contenedor responsivo para vídeos (mantiene proporción 16:9) */
+.video-wrapper {
+    width: 100%;
+    max-width: 900px; /* límite de ancho para pantallas grandes */
+    aspect-ratio: 16 / 9;
+    background: #000; /* fondo while loading */
+    position: relative;
+}
+.video-wrapper iframe,
+.video-wrapper video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* HEADER, NAV Y FOOTER */
+header {
+    background-color: var(--color-primary);
+    color: white; /* Corregido para que el texto blanco se vea en el fondo magenta */
+    padding: 30px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+header h1 {
+    color: white; /* Asegura que el h1 del header sea blanco */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: var(--color-nav);
+    text-align: center;
+    font-size: 1.3rem; /* Navegación más grande */
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--color-accent);
+    color: var(--text-dark);
+}
+
+footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
+.artista {
+    background-color: white;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(255, 51, 102, 0.4);
+    border: 2px solid #ff3366;
+    transition: transform 0.3s;
+}
+
+.artista:hover {
+    transform: scale(1.05); /* Zoom sutil al pasar el ratón */
+}
+
+.artista img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 25px;
+    border: 5px solid var(--color-accent); 
+}
+
+.albumes-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+
+.album {
+    width: 280px;
+    margin: 15px;
+    text-align: center;
+    background-color: #ffffff;
+    /* BORDES MÁS LINDOS: Mayor radio y doble sombra */
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 15px rgba(255, 51, 102, 0.4), 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.album:hover {
+    transform: translateY(-5px) scale(1.02); /* Efecto burbuja al pasar el ratón */
+}
+
+.album img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.artistas-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: 30px;
+    padding: 30px 20px;
+}
+
+.reseñas h2, #reseñas h2 {
+    margin-bottom: 20px;
+    color: var(--color-primary);
+}
+
+.reseñas-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    align-items: start;
+}
+
+.reseña {
+    background: #ffb5d2; /* soft pink inside each card */
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+    border-left: 4px solid var(--color-primary-dark); /* darker accent */
+    display: flex;
+    flex-direction: column;
+    min-height: 140px;
+}
+
+.reseña p.quote{
+    font-style: italic;
+    color: #333;
+    margin: 0 0 14px 0;
+    line-height: 1.6;
+    font-size: 1.05rem; /* slightly larger for readability */
+}
+
+.reseña .meta  {
+    margin-top: auto; /* empuja meta al final del card */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+
+.reseña .author {
+    font-weight: 700;
+    color: var(--text-dark);
+    font-size: 1rem; /* larger author name */
+}
+
+#contacto {
+    background-color: #e69fb7;
+}
+
+/* Contact section layout: form on left for larger screens */
+#contacto .contact-wrapper {
+    display: grid;
+    /* Left column sized to the form (max 600px), right column fills remaining space */
+    grid-template-columns: minmax(0, 600px) 1fr; /* form left, info/right column */
+    gap: 30px;
+    align-items: start;
+    justify-items: start; /* ensure children (the form) align left within their column */
+}
+
+#contacto form {
+    max-width: 600px; /* keep form narrower */
+    margin: 0; /* remove auto centering so it stays left */
+}
+
+
+#contacto h2 {
+    color: var(--text-dark);
+    text-align: left;
+}
+
+/* On desktop the form should remain left-aligned within the left column.
+   Center it only on small screens via the media query below. */
+
+#contacto form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 1.05rem; /* Etiquetas del formulario más grandes */
+}
+
+/* Make inputs and textarea full width and consistent */
+#contacto form input[type="text"],
+#contacto form input[type="email"],
+#contacto form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+#contacto form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+#contacto form button {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 12px 25px; /* Botón más grande */
+    font-size: 1.05rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+#contacto form button:hover {
+    background-color: var(--color-primary-dark);
+}
+
+/* Align label+input pairs visually when user used inline labels */
+#contacto label {
+    display: block;
+}
+
+/* MEDIA QUERY: Reglas para móviles/tablets (768px o menos) */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem; /* Títulos más pequeños en móvil */
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    /* El GRID de Artistas cambia a una sola columna */
+    .artistas-list {
+        grid-template-columns: 1fr;
+    }
+
+    /* Video responsivo */
+    #inicio iframe {
+        max-width: 100%;
+        width: 100%;
+        height: 300px;
+    }
+
+    /* El formulario se estira a todo el ancho en móvil (100%) */
+    #contacto form input[type="text"],
+    #contacto form input[type="email"],
+    #contacto form textarea,
+    #contacto form button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    /* center the form on small screens */
+    #contacto form {
+        margin: 0 auto;
+    }
+
+    /* Reduce el padding de las secciones */
+    section {
+        padding: 30px 10px;
+    }
+
+    /* Mejora: hace las imágenes de álbumes y artistas responsivas */
+    .album img,
+    .artista img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Small tweaks for very small screens */
+@media screen and (max-width: 480px) {
+    .reseñas-list {
+        grid-template-columns: 1fr;
+    }
+    .reseña {
+        padding: 14px;
+        font-size: 0.98rem; /* slightly larger base font on small screens */
+    }
+}
+

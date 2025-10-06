@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <h1>Pops'up!</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#artistas">Artistas</a></li>
+            <li><a href="#albumes">Álbumes</a></li>
+            <li><a href="#reseñas">Reseñas</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            
+        </ul>
+    </nav>
+    <main>
+        <section id="inicio">        
+        <h2>Bienvenido/a!</h2>
+        <p>Descubre a tus artistas favoritos y sus álbumes más recientes.</p>
+        <h3>Video destacado de la semana:</h3>
+        <div class="video-wrapper">
+            <iframe
+                src="https://www.youtube.com/embed/ko70cExuzZM"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+      </section>
+
+        <section id="artistas">
+            <h2>Artistas Destacados</h2>
+            <div class="artistas-list">
+                <div class="artista">
+                    <img src="./imagenes/TSS.jpeg" alt="Artista 1">
+                    <p>Taylor Swift</p>
+                </div>
+                <div class="artista">
+                    <img src="./imagenes/sc.webp" alt="Artista 2">
+                    <p>Sabrina Carpenter</p>
+                </div>
+                <div class="artista">
+                    <img src="./imagenes/lg.jpeg" alt="Artista 3">
+                    <p>Lady Gaga</p>
+                </div>
+                <div class="artista">
+                    <img src="./imagenes/cp.webp" alt="Artista 4">
+                    <p>Chappel Roan</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="albumes">
+            <h2>Álbumes Destacados</h2>
+            <div class="albumes-list">
+                <div class="album">
+                    <img src="./imagenes/TLOAS.jpeg" alt="Álbum 1">
+                    <h3>The Life Of A Showgirl</h3>
+                </div>
+                <div class="album">
+                    <img src="./imagenes/mbf.png" alt="Álbum 2">
+                    <h3>Man's Best Friend</h3>
+                </div>
+                <div class="album">
+                    <img src="./imagenes/mayhem.jpeg" alt="Álbum 3">
+                    <h3>Mayhem</h3>
+                </div>
+                <div class="album">
+                    <img src="./imagenes/cpa.jpeg" alt="Álbum 4">
+                    <h3>The Rise And Fall Of A Midwest Princess</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="reseñas">
+            <h2>Lo que dicen nuestros fans</h2>
+            <div class="reseñas-list">
+                <div class="reseña">
+                    <h3>¡El mejor sitio de música Pop!</h3>
+                    <p>"La navegación es super fluida y amo el diseño vibrante. Siempre encuentro los últimos lanzamientos aquí."</p>
+                    <p class="autor">- Sofía M.</p>
+                </div>
+                <div class="reseña">
+                    <h3>¡Increíbles recomendaciones!</h3>
+                    <p>"Gracias a esta página descubrí a mi artista favorito. La sección de álbumes es fácil de usar y el diseño es genial."</p>
+                    <p class="autor">- Alicia G.</p>
+                </div>
+                <div class="reseña">
+                    <h3>Fácil y divertido</h3>
+                    <p>"Funciona perfecto en mi móvil. Los colores son geniales y el video destacado siempre me da una buena sorpresa."</p>
+                    <p class="autor">- Elena P.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2>Si tienes alguna pregunta o sugerencia, no dudes en contactarnos</h2>
+            <div class="contact-wrapper">
+                <form action="https://formspree.io/f/xblanrpq" method="POST">
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" type="text" name="nombre" required>
+
+                    <label for="email">Email</label>
+                    <input id="email" type="email" name="email" required>
+
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+
+                    <button type="submit">Enviar</button>
+                </form>
+
+
+            </div>
+        </section>
+        
+
+    </main>
+    <footer></footer>
+</body>
+</html>
