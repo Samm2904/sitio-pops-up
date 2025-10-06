@@ -8,10 +8,11 @@
     --radius-lg: 20px;
 }
 
- *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
-
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -27,16 +28,16 @@ h1,
 h2 {
     color: var(--color-primary);
     text-transform: uppercase;
-    text-align: center; 
+    text-align: center;
     letter-spacing: 1px;
 }
 
 h1 {
-    font-size: 3.5rem; 
+    font-size: 3.5rem;
 }
 
 h2 {
-    font-size: 2.2rem; 
+    font-size: 2.2rem;
     margin-bottom: 30px;
 }
 
@@ -48,7 +49,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     text-align: center;
     font-size: 1.2rem;
     padding: 40px 20px;
@@ -67,11 +68,12 @@ section {
 
 .video-wrapper {
     width: 100%;
-    max-width: 900px; 
+    max-width: 900px;
     aspect-ratio: 16 / 9;
-    background: #000; 
+    background: #000;
     position: relative;
 }
+
 .video-wrapper iframe,
 .video-wrapper video {
     position: absolute;
@@ -82,13 +84,14 @@ section {
 
 header {
     background-color: var(--color-primary);
-    color: white; 
+    color: white;
     padding: 30px;
     text-align: center;
     letter-spacing: 2px;
 }
+
 header h1 {
-    color: white; 
+    color: white;
 }
 
 nav ul {
@@ -97,7 +100,7 @@ nav ul {
     margin: 0;
     background-color: var(--color-nav);
     text-align: center;
-    font-size: 1.3rem; 
+    font-size: 1.3rem;
 }
 
 nav li {
@@ -135,22 +138,22 @@ footer {
 }
 
 .artista:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 .artista img {
     width: 100%;
-    max-width: 180px; /
-    aspect-ratio: 1 / 1; 
-    object-fit: cover; 
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     border-radius: 50%;
-    margin: 0 auto 25px auto; 
+    margin: 0 auto 25px auto;
     display: block;
     border: 5px solid var(--color-accent);
 }
 
 .album {
-    width: 100%; 
+    width: 100%;
     text-align: center;
     background-color: #ffffff;
     border-radius: var(--radius-lg);
@@ -160,7 +163,7 @@ footer {
 }
 
 .album:hover {
-    transform: translateY(-5px) scale(1.02); 
+    transform: translateY(-5px) scale(1.02);
 }
 
 .album img {
@@ -169,21 +172,16 @@ footer {
     border-radius: 12px;
 }
 
-.albumes-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
-    gap: 20px;
-    padding: 30px 20px;
-}
-
+.albumes-list,
 .artistas-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 20px;
     padding: 30px 20px;
 }
 
-.reseñas h2, #reseñas h2 {
+.reseñas h2,
+#reseñas h2 {
     margin-bottom: 20px;
     color: var(--color-primary);
 }
@@ -196,32 +194,30 @@ footer {
 }
 
 .reseña {
-    background: #ffb5d2; 
+    background: #ffb5d2;
     border-radius: 14px;
     padding: 20px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.07);
-    border-left: 4px solid var(--color-primary-dark); 
+    border-left: 4px solid var(--color-primary-dark);
     display: flex;
     flex-direction: column;
     min-height: 140px;
 }
 
-.reseña p.quote{
+.reseña p.quote {
     font-style: italic;
     color: #333;
     margin: 0 0 14px 0;
     line-height: 1.6;
-    font-size: 1.05rem; 
+    font-size: 1.05rem;
 }
 
-.reseña .meta  {
-    margin-top: auto; 
+.reseña .meta {
+    margin-top: auto;
     display: flex;
     align-items: center;
     gap: 12px;
 }
-
-
 
 .reseña .author {
     font-weight: 700;
@@ -235,17 +231,16 @@ footer {
 
 #contacto .contact-wrapper {
     display: grid;
-    grid-template-columns: minmax(0, 600px) 1fr; 
+    grid-template-columns: minmax(0, 600px) 1fr;
     gap: 30px;
     align-items: start;
-    justify-items: start; 
+    justify-items: start;
 }
 
 #contacto form {
-    max-width: 600px; 
-    margin: 0; 
+    max-width: 600px;
+    margin: 0;
 }
-
 
 #contacto h2 {
     color: var(--text-dark);
@@ -256,7 +251,7 @@ footer {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    font-size: 1.05rem; 
+    font-size: 1.05rem;
 }
 
 #contacto form input[type="text"],
@@ -278,7 +273,7 @@ footer {
 #contacto form button {
     background-color: var(--color-primary);
     color: white;
-    padding: 12px 25px; /* Botón más grande */
+    padding: 12px 25px;
     font-size: 1.05rem;
     border: none;
     border-radius: 8px;
@@ -291,26 +286,26 @@ footer {
     background-color: var(--color-primary-dark);
 }
 
-#contacto label {
-    display: block;
-}
-
 @media screen and (max-width: 768px) {
     h1 {
-        font-size: 2.5rem; 
+        font-size: 2.5rem;
     }
 
     h2 {
         font-size: 1.8rem;
     }
-    
+
+    .albumes-list,
     .artistas-list {
         grid-template-columns: 1fr;
+        padding: 20px 10px;
+        gap: 15px;
     }
+
     .artista img {
-    max-width: 140px; 
-}
-    
+        max-width: 140px;
+    }
+
     #inicio iframe {
         max-width: 100%;
         width: 100%;
@@ -324,12 +319,11 @@ footer {
         width: 100%;
         box-sizing: border-box;
     }
-    
+
     #contacto form {
         margin: 0 auto;
     }
 
-    /
     section {
         padding: 30px 10px;
     }
@@ -345,12 +339,9 @@ footer {
     .reseñas-list {
         grid-template-columns: 1fr;
     }
+
     .reseña {
         padding: 14px;
-        font-size: 0.98rem; 
+        font-size: 0.98rem;
     }
 }
-
-
-
-
