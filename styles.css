@@ -177,6 +177,13 @@ footer {
     border-radius: 12px;
 }
 
+.albumes-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: 30px;
+    padding: 30px 20px;
+}
+
 .artistas-list {
     display: grid;
     grid-template-columns: 1fr 1fr ;
@@ -351,3 +358,4 @@ footer {
         font-size: 0.98rem; 
     }
 }
+
