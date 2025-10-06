@@ -127,6 +127,7 @@ footer {
     text-align: center;
 }
 
+
 .artista {
     background-color: white;
     border-radius: 16px;
@@ -137,19 +138,20 @@ footer {
     transition: transform 0.3s;
 }
 
-.artista:hover {
-    transform: scale(1.05);
-}
-
 .artista img {
     width: 100%;
-    max-width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 50%;
-    margin: 0 auto 25px auto;
+    max-width: 180px;   /* ancho máximo en desktop */
+    height: 180px;      /* fuerza altura cuadrada */
+    object-fit: cover;  /* recorta y centra la imagen */
+    border-radius: 50%; /* círculo perfecto */
+    margin: 0 auto 25px auto; 
     display: block;
     border: 5px solid var(--color-accent);
+    transition: transform 0.3s ease;
+}
+
+.artista:hover img {
+    transform: scale(1.05);
 }
 
 .album {
@@ -162,14 +164,16 @@ footer {
     transition: transform 0.3s ease-in-out;
 }
 
-.album:hover {
-    transform: translateY(-5px) scale(1.02);
-}
-
 .album img {
     width: 100%;
-    height: auto;
+    height: 180px;      /* altura uniforme para todos */
+    object-fit: cover;  /* recorta y centra la imagen */
     border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.album:hover img {
+    transform: scale(1.03);
 }
 
 .albumes-list,
@@ -295,15 +299,16 @@ footer {
         font-size: 1.8rem;
     }
 
+    .artista img,
+    .album img {
+        max-width: 140px;
+        height: 140px;
+    }
     .albumes-list,
     .artistas-list {
         grid-template-columns: 1fr;
         padding: 20px 10px;
         gap: 15px;
-    }
-
-    .artista img {
-        max-width: 140px;
     }
 
     #inicio iframe {
@@ -327,12 +332,6 @@ footer {
     section {
         padding: 30px 10px;
     }
-
-    .album img,
-    .artista img {
-        max-width: 100%;
-        height: auto;
-    }
 }
 
 @media screen and (max-width: 480px) {
@@ -343,5 +342,10 @@ footer {
     .reseña {
         padding: 14px;
         font-size: 0.98rem;
+    }
+    .artista img,
+    .album img {
+        max-width: 120px;
+        height: 120px;
     }
 }
