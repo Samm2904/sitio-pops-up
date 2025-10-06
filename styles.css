@@ -140,10 +140,10 @@ footer {
 
 .artista img {
     width: 100%;
-    max-width: 180px;   /* ancho máximo en desktop */
-    height: 180px;      /* fuerza altura cuadrada */
-    object-fit: cover;  /* recorta y centra la imagen */
-    border-radius: 50%; /* círculo perfecto */
+    max-width: 180px;   
+    height: 180px;      
+    object-fit: cover;  
+    border-radius: 50%; 
     margin: 0 auto 25px auto; 
     display: block;
     border: 5px solid var(--color-accent);
@@ -166,8 +166,8 @@ footer {
 
 .album img {
     width: 100%;
-    height: 180px;      /* altura uniforme para todos */
-    object-fit: container;  /* recorta y centra la imagen */
+    height: auto;      
+    object-fit: container;  
     border-radius: 12px;
     transition: transform 0.3s ease;
 }
@@ -349,4 +349,5 @@ footer {
         height: 120px;
     }
 }
+
 
